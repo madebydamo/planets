@@ -20,9 +20,10 @@ use model::{Scene, Screen};
 
 fn main() -> Result<()> {
     let size = crossterm::terminal::size().unwrap_or((90, 30));
-    let cam = Camera::new(
+    let original_y = -00.;
+    let mut cam = Camera::new(
         0.,
-        -15.,
+        original_y,
         30.,
         PI / 3.,
         PI / 3. * ((size.1 as f32) / (size.0 as f32)) * 2.2,
@@ -37,6 +38,7 @@ fn main() -> Result<()> {
         cam.fill(&mut screen, &scene_ti);
         draw(&screen)?;
         i += 1.;
+        cam.position.y = original_y + (scene_ti.ge * 1.3).cos() * 10.;
     }
 }
 

@@ -18,10 +18,10 @@ impl Camera {
     }
     pub(crate) fn fill(&self, screen: &mut Screen, scene: &Scene) {
         //amount of points
-        let asm = 90;
-        let bsm = 180;
-        let aem = 60;
-        let bem = 120;
+        let asm = 45;
+        let bsm = 240;
+        let aem = 45;
+        let bem = 210;
         let amm = 30;
         let bmm = 90;
         //sun

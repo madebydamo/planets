@@ -18,12 +18,12 @@ impl Camera {
     }
     pub(crate) fn fill(&self, screen: &mut Screen, scene: &Scene) {
         //amount of points
-        let asm = 45;
-        let bsm = 240;
-        let aem = 45;
-        let bem = 210;
+        let asm = 55;
+        let bsm = 270;
+        let aem = 55;
+        let bem = 270;
         let amm = 30;
-        let bmm = 90;
+        let bmm = 180;
         //sun
         for als in 0..asm {
             let als = (als as f32) / (asm as f32) * PI;

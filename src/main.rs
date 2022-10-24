@@ -1,5 +1,3 @@
-extern crate atty;
-
 mod camera;
 mod model;
 
@@ -28,7 +26,7 @@ fn main() -> Result<()> {
         PI / 3.,
         PI / 3. * ((size.1 as f32) / (size.0 as f32)) * 2.2,
     );
-    let mut screen = Screen::new((size.0 - 2) as usize, (size.1 - 2) as usize);
+    let mut screen = Screen::new((size.0) as usize, (size.1) as usize);
     let scene = Scene::new(2.5, 2., 0.66, 12., 4., 0., 0.);
     execute!(stdout(), EnterAlternateScreen,)?;
     let mut i = 0.;
@@ -44,7 +42,7 @@ fn main() -> Result<()> {
 
 fn draw(screen: &Screen) -> Result<()> {
     for i in 0..screen.height {
-        stdout().queue(MoveTo(1, (i + 1) as u16))?;
+        stdout().queue(MoveTo(0, i as u16))?;
         let width = screen
             .buffer
             .get(i)

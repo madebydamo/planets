@@ -147,8 +147,8 @@ impl Camera {
 
         Camera::fill_px(
             screen,
-            px_x.round() as usize,
-            px_y.round() as usize,
+            px_x.floor() as usize,
+            px_y.floor() as usize,
             (31. + intensity * 224.).round() as u8,
             depth,
             rgb,
